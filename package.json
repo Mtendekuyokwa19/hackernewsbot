@@ -1,17 +1,40 @@
 {
-
+ "type":"commonjs",
   "dependencies": {
+
     "-": "^0.0.1",
+
     "@google/generative-ai": "^0.21.0",
+
     "chart.js": "^4.4.7",
+
     "d3": "^7.9.0",
+
     "dotenv": "^16.4.7",
+
     "ejs": "^3.1.10",
+
     "ejs-lint": "^2.0.1",
+
     "express": "^4.21.2",
+
     "express-validator": "^7.2.1",
+
     "ollama": "^0.5.12",
+
     "openai": "^4.79.3",
-    "pg": "^8.13.1"
+
+    "pg": "^8.13.1",
+
+    "twitter": "^1.7.1",
+
+    "twitter-api-client": "^1.6.1",
+
+    "twitter-api-sdk": "^1.2.1",
+
+    "twitter.js": "^0.14.0"
+
   }
+
 }
+

@@ -1,5 +1,5 @@
 const express = require("express");
-const { router } = require("./routes/route");
+const { router, twitterClient, getuser } = require("./routes/route");
 const path = require("path");
 const app = express();
 app.set("views", path.join(__dirname, "views"));
@@ -11,6 +11,6 @@ app.use("/newcrop", router);
 app.use("/newfarmer", router);
 
 app.use("/crop/:crop", router);
-
+getuser()
 app.use("/farmer/:username", router);
 app.listen(8011);

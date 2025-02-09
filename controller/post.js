@@ -20,12 +20,15 @@ async function getallPostcodes() {
 }
 async function resolveThreePost(fetchpostbyid) {
   let posts = []
+
+
   getallPostcodes().then((allposts) => {
     return allposts.json()
   }).then((allposts) => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
 
-      fetchpostbyid(allposts[i]).then((post) => (changeTotext(post)))
+      fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post), 3000))
+
     }
 
   })
@@ -55,8 +58,6 @@ function goodmessage() {
 async function createTweetsofThreeposts() {
   await resolveThreePost(fetchpostbyid)
 }
-// setInterval(createTweetsofThreeposts, 67800)
-setInterval(() => console.log(1), 1000)
-module.exports = {
-  createTweetsofThreeposts
-}
+setInterval(createTweetsofThreeposts, 67800)
+// createTweetsofThreeposts()
+

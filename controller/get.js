@@ -49,14 +49,6 @@ function changeTotext({ by, id, score, text, title, url }) {
 async function createTweetsofThreeposts() {
   await resolveThreePost(fetchpostbyid)
 }
-createTweetsofThreeposts()
-module.exports = {
-  // getuser,
-  resolveThreePost,
-  fetchpostbyid
-
-}
-
 module.exports = {
   client
 }

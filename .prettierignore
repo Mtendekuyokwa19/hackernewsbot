@@ -1,0 +1,10 @@
+
+node_modules/
+dist/
+specific-file.js
+**/*.ejs
+node_modules/
+dist/
+specific-file.js
+**/*.min.js
+*.ejs

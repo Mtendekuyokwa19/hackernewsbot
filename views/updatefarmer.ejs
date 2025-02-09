@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agrilog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class=" bg-slate-900 gap-2 h-screen flex items-center justify-center  ">
+
+
+<form action="/farmer/<%=farmer_details.username%>" class="w-1/2 flex-col flex 
+justify-center   bg-slate-700 rounded-md
+text-slate-200 p-8 gap-2" method="POST">
+<p><%=error%></p>
+
+<input type="text"  name="farmer_id" value="<%=farmer_details.id%>" class="text-black rounded" readonly>
+<label>Farmer name</label>
+
+<input type="text"  name="username" value=<%=farmer_details.username%> class="text-black rounded">
+
+<label>phone number</label>
+<input  value=<%=farmer_details.phone_number %>  type="text" name="phone_number" class="rounded text-black" >
+
+<label>crop of interest</label>
+<select id="crop_name" name="crop_name" class="text-black">
+<%croplist.forEach((crop)=>{%>
+<% if(farmer_details.crop_name==crop.crop_name){%>
+
+<option selected="selected" value=<%=crop.crop_name%> class="text-slate-700"> <%=crop.crop_name%>
+</option>
+<%return%>
+<%}%>
+<option value=<%=crop.crop_name%> class="text-slate-700"> <%=crop.crop_name%>
+</option>
+
+<%})%>
+</select>
+
+<label>Area of operation</label>
+<select id="area_name" name="area_name" class="text-slate-700">
+<%arealist.forEach((area)=>{%>
+<%if(area.district==farmer_details.district){%>
+
+<option value=<%=area.district%> selected="selected" class="text-slate-700"> <%=area.district%></option>
+<%return%>
+<%}%>
+
+<option value=<%=area.district%> class="text-slate-700"> <%=area.district%></option>
+<%})%>
+</select>
+<label>password</label>
+<input type="password" class="rounded text-slate-700" name="password" >
+
+<button type="submit" class="bg-green-700 w-1/2">Submit</button>
+</form>
+
+
+
+
+</body>
+
+
+
+</html>

@@ -58,6 +58,10 @@ function goodmessage() {
 async function createTweetsofThreeposts() {
   await resolveThreePost(fetchpostbyid)
 }
+const express = require("express")
+const app = express()
+
 setInterval(createTweetsofThreeposts, 67800)
+app.listen(8000)
 // createTweetsofThreeposts()
 

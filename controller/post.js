@@ -1,12 +1,5 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-// setInterval(() => {
-//
-// }, 46400)
-
 const { TweetManager } = require("twitter.js")
-const { client } = require("./controller/get")
+const { client } = require("./get")
 require("dotenv").config()
 
 
@@ -32,7 +25,7 @@ async function resolveThreePost(fetchpostbyid) {
   }).then((allposts) => {
     for (let i = 0; i < 3; i++) {
 
-      fetchpostbyid(allposts[i]).then((post) => postTweet(changeTotext(post)))
+      fetchpostbyid(allposts[i]).then((post) => (changeTotext(post)))
     }
 
   })
@@ -52,16 +45,18 @@ function changeTotext({ by, id, score, text, title, url }) {
 
 ${goodmessage()}
 `
-  return tweet
+  postTweet(tweet)
 }
 function goodmessage() {
   let messages = ["Have a great day", "Enjoy your read", "Follow for more"]
-  return messages[Math.random() * 3]
+  return messages[1]
 
 }
 async function createTweetsofThreeposts() {
   await resolveThreePost(fetchpostbyid)
 }
-
-createTweetsofThreeposts()
-app.listen(8011);
+// setInterval(createTweetsofThreeposts, 67800)
+setInterval(() => console.log(1), 1000)
+module.exports = {
+  createTweetsofThreeposts
+}

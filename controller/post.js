@@ -27,7 +27,7 @@ async function resolveThreePost(fetchpostbyid) {
   }).then((allposts) => {
     for (let i = 0; i < 5; i++) {
 
-      fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post), 36000))
+      fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post), 508000))
 
     }
 
@@ -61,7 +61,7 @@ async function createTweetsofThreeposts() {
 const express = require("express")
 const app = express()
 
-setInterval(createTweetsofThreeposts, 18000)
+setInterval(createTweetsofThreeposts, 8600000)()
 app.listen(8000)
 // createTweetsofThreeposts()
 

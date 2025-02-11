@@ -42,8 +42,8 @@ async function fetchpostbyid(id) {
 }
 function changeTotext({ by, id, score, text, title, url }) {
 
-  let tweet = `✅Title:${title} +
-🔗link: ${url}+
+  let tweet = `✅Title:${title} 
+🔗link: ${url}
 🧑🏽postby:${by}
 
 ${goodmessage()}

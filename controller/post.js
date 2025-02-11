@@ -25,15 +25,19 @@ async function resolveThreePost(fetchpostbyid) {
   getallPostcodes().then((allposts) => {
     return allposts.json()
   }).then((allposts) => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
 
-      fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post), 508000))
-
+      // 
+      setTimeout(() => fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * 3600000))
     }
+
 
   })
 }
+function timeout(i) {
 
+  setTimeout(() => console.log("yes" + i), 2200)
+}
 
 
 async function fetchpostbyid(id) {
@@ -60,7 +64,7 @@ async function createTweetsofThreeposts() {
 }
 const express = require("express")
 const app = express()
-setInterval(createTweetsofThreeposts, 8600000)
+setInterval(createTweetsofThreeposts, 60000)
 app.listen(8000)
 // createTweetsofThreeposts()
 

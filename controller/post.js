@@ -60,8 +60,7 @@ async function createTweetsofThreeposts() {
 }
 const express = require("express")
 const app = express()
-
-setInterval(createTweetsofThreeposts, 8600000)()
+setInterval(createTweetsofThreeposts, 8600000)
 app.listen(8000)
 // createTweetsofThreeposts()
 

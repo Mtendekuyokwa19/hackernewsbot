@@ -28,7 +28,7 @@ async function resolveThreePost(fetchpostbyid) {
     for (let i = 0; i < 5; i++) {
 
       // 
-      setTimeout(() => fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * 3600000))
+      setTimeout(() => fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * (3600000 * 2)))
     }
 
 

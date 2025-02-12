@@ -25,7 +25,7 @@ async function resolveThreePost(fetchpostbyid) {
   getallPostcodes().then((allposts) => {
     return allposts.json()
   }).then((allposts) => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
 
       // 
       setTimeout(() => fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * 3600000))

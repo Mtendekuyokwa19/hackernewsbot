@@ -28,7 +28,7 @@ async function resolveThreePost(fetchpostbyid) {
   }).then((allposts) => {
     for (let i = 0; i < 5; i++) {
 
-      setTimeout(() => fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * (3600000)))
+      fetchpostbyid(allposts[i]).then((post) => setTimeout(changeTotext(post), i * 360000))
     }
 
 
@@ -50,8 +50,9 @@ ${goodmessage()}
   postTweet(tweet)
 }
 function goodmessage() {
-  let messages = ["Have a great day", "Enjoy your read", "Follow for more"]
-  return messages[1]
+  let messages = ["Have a great day", "Enjoy your read", "Follow for more", "happy hacking", "happy painting", "Have a great week", "Peace out", "Checkout our github repo"]
+  let randomIndex = Math.floor(Math.random() * messages.length - 1)
+  return messages[randomIndex]
 
 }
 async function createTweetsofThreeposts() {

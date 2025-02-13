@@ -1,6 +1,7 @@
-# A hacker news twitter bot
+# A Hacker news twitter bot
 This is simply a hacker news bot that fetches trending posts from hacker news and posts them
 [link to account](https://x.com/tryhackernews) 
+[hacker news](https://news.ycombinator.com/) 
 ## File structures
 - It only consists of two important files and that is the `app.js`  and `get.js`  the rest of the structure 
 has been left for future scaling
@@ -12,10 +13,10 @@ I had to put it in the app.js
 - Express.js
 - git+github
 ## .env structure
-CONSUMER_KEY=
-CONSUMER_SECRET=
-ACCESS_TOKEN_KEY
-ACCESS_TOKEN_SECRET
+- CONSUMER_KEY=
+- CONSUMER_SECRET=
+- ACCESS_TOKEN_KEY
+- ACCESS_TOKEN_SECRET
 BEARERTOKEN=
 ## Inspiration and motivation
 - I personally did not enjoy having to leave twitter to go read top posts on hacker news 

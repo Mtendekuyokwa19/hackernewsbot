@@ -47,7 +47,7 @@ function changeTotext({ by, id, score, text, title, url }, hackernewsurl) {
 🔗link: ${url}
 🧑🏽postby:${by}
 
-hacker's url:${hackernewsurl}
+hacker's url: ${hackernewsurl}
 
 ${goodmessage()}
 `

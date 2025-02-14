@@ -28,29 +28,34 @@ async function resolveThreePost(fetchpostbyid) {
   }).then((allposts) => {
     for (let i = 0; i < 5; i++) {
 
-      setTimeout(fetchpostbyid(allposts[i]).then((post) => changeTotext(post)), (i * 360000))
+      fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post, hackernewsurl(allposts[i])), i * 3600000))
     }
 
 
   })
 }
-
+function hackernewsurl(id) {
+  return `https://news.ycombinator.com/item?id=${id}`
+}
 async function fetchpostbyid(id) {
   const post = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
   return post.json()
 }
-function changeTotext({ by, id, score, text, title, url }) {
+function changeTotext({ by, id, score, text, title, url }, hackernewsurl) {
 
   let tweet = `✅Title:${title} 
 🔗link: ${url}
 🧑🏽postby:${by}
 
+hacker's url:${hackernewsurl}
+
 ${goodmessage()}
 `
   postTweet(tweet)
+  // console.log(tweet)
 }
 function goodmessage() {
-  let messages = ["Have a great day", "Enjoy your read", "Follow for more", "happy hacking", "happy painting", "Have a great week", "Peace out", "Checkout our github repo"]
+  let messages = ["Have a great day", "stay dangerous", "Enjoy your read", "Follow for more", "happy hacking", "stay safe", "Have a great week", "Peace out", "Checkout our github repo"]
   let randomIndex = Math.floor(Math.random() * messages.length - 1)
   return messages[randomIndex]
 
@@ -63,4 +68,5 @@ const app = express()
 setInterval(createTweetsofThreeposts, 7200000)
 app.listen(8000)
 
+// createTweetsofThreeposts()
 

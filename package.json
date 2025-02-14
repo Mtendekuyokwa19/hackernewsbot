@@ -17,6 +17,7 @@
   "twitter": "^1.7.1",
   "twitter-api-client": "^1.6.1",
   "twitter-api-sdk": "^1.2.1",
-  "twitter.js": "^0.14.0"
+  "twitter.js": "^0.14.0",
+  "uuid": "^11.0.5"
  }
 }

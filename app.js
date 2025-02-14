@@ -26,7 +26,7 @@ async function resolveThreePost(fetchpostbyid) {
   getallPostcodes().then((allposts) => {
     return allposts.json()
   }).then((allposts) => {
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 5; i++) {
 
       fetchpostbyid(allposts[i]).then((post) => setTimeout(() => changeTotext(post, hackernewsurl(allposts[i])), i * 3600000))
     }
@@ -48,7 +48,7 @@ function changeTotext({ by, id, score, text, title, url }, hackernewsurl) {
 🧑🏽postby:${by}
 
 hacker's url: ${hackernewsurl}
-hacker's uuid:${uuidv4()}
+hacker's uuid:${uuidv4().split("-")[1]}
 ${goodmessage()}
 `
   postTweet(tweet)
@@ -56,7 +56,7 @@ ${goodmessage()}
 }
 function goodmessage() {
   let messages = ["Have a great day", "stay dangerous", "Enjoy your read", "Follow for more", "happy hacking", "stay safe", "Have a great week", "Peace out", "Checkout our github repo"]
-  let randomIndex = Math.floor(Math.random() * messages.length - 2)
+  let randomIndex = Math.floor(Math.random() * (messages.length - 2))
   return messages[randomIndex]
 
 }
